@@ -1,0 +1,86 @@
+/* Resets and general styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fddde6; /* Light Pink */
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.love {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    animation: fall 2s linear forwards;
+    z-index: 1;
+}
+
+.message {
+    font-size: 5em;
+    color: white;
+    font-family: 'cursive', sans-serif; /* Use a generic cursive font */
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: appear 2s forwards 2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* Style for the share link */
+.share-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1da1f2; /* Twitter blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;  /* Add some spacing above the link */
+}
+
+.share-link:hover {
+    background-color: #0d8ddb; /* Darker blue on hover */
+}
+
+/* Animations */
+@keyframes fall {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
