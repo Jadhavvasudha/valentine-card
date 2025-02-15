@@ -1,5 +1,7 @@
 /* Resets and general styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,7 +9,7 @@
 
 body {
     background-color: #fddde6; /* Light Pink */
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -38,7 +40,7 @@ body {
 .message {
     font-size: 5em;
     color: white;
-    font-family: 'cursive', sans-serif; /* Use a generic cursive font */
+    font-family: "cursive", sans-serif; /* Use a generic cursive font */
     font-weight: bold;
     position: absolute;
     top: 10%;
@@ -51,18 +53,31 @@ body {
 }
 
 /* Style for the share link */
-.share-link {
+.share-link,
+#restart {
     display: inline-block;
     padding: 10px 20px;
     background-color: #1da1f2; /* Twitter blue */
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;  /* Add some spacing above the link */
+    margin: 10px;
+    min-width: 160px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#restart {
+    background-color: #ff69b4;
 }
 
 .share-link:hover {
     background-color: #0d8ddb; /* Darker blue on hover */
+}
+
+#restart:hover {
+    background-color: #ff1493;
 }
 
 /* Animations */
@@ -83,4 +98,124 @@ body {
     100% {
         opacity: 1;
     }
+}
+
+/* Update these styles in style.css */
+.alpaca {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    height: 250px;
+    opacity: 0;
+    z-index: 1;
+    transform: translateY(-50%); /* Center vertically */
+}
+
+.alpaca-left {
+    left: -200px;
+    animation: slideFromLeft 1s forwards;
+}
+
+.alpaca-right {
+    right: -200px;
+    animation: slideFromRight 1s forwards;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        left: -200px;
+        opacity: 0;
+    }
+    100% {
+        left: 50%; /* Move to center */
+        transform: translateX(-100%) translateY(-50%); /* Position just left of center */
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        right: -200px;
+        opacity: 0;
+    }
+    100% {
+        right: 50%; /* Move to center */
+        transform: translateX(100%) translateY(-50%); /* Position just right of center */
+        opacity: 1;
+    }
+}
+
+/* Add these styles to style.css */
+.toggle-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 4;
+}
+
+.toggle-label {
+    color: #333;
+    font-size: 16px;
+}
+
+/* Toggle switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff69b4;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Hide elements by default */
+.love.hidden,
+.alpaca.hidden {
+    display: none;
 }

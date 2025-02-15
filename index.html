@@ -1,21 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day!</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.png" type="image/png">  <!-- Updated Favicon Link -->
-</head>
-<body>
-    <div class="container" role="main">
-        <img src="heart_falling.png" alt="Animated falling heart" class="love" aria-hidden="true">
-        <h1 class="message" aria-label="Happy Valentine's Day!">Happy Valentine's Day!</h1>
-        <button id="restart" aria-label="Restart the animation">Restart Animation</button>
-        <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20Happy%20Valentine%27s%20Day%20card!&url=[YOUR_WEBSITE_URL]"
-           target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter" class="share-link">Share on Twitter</a>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Happy Valentine's Day!</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="favicon.png" type="image/png" />
+    </head>
+    <body>
+        <div class="container" role="main">
+            <img
+                src="heart_falling.png"
+                alt="Animated falling heart"
+                class="love"
+                aria-hidden="true"
+            />
+            <img
+                src="alpaca-left.png"
+                alt="Cute alpaca"
+                class="alpaca alpaca-left"
+                aria-hidden="true"
+            />
+            <img
+                src="alpaca-right.png"
+                alt="Cute alpaca"
+                class="alpaca alpaca-right"
+                aria-hidden="true"
+            />
+            <h1 class="message" aria-label="Happy Valentine's Day!">
+                Happy Valentine's Day!
+            </h1>
+            <button id="restart" aria-label="Restart the animation">
+                Restart Animation
+            </button>
+            <div class="toggle-container">
+                <label class="switch">
+                    <input type="checkbox" id="displayToggle" />
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">Show Alpacas</span>
+            </div>
+            <a
+                href="https://twitter.com/intent/tweet?text=Check%20out%20this%20Happy%20Valentine%27s%20Day%20card!&url=https%3A%2F%2Fjadhavvasudha.github.io%2Fvalentine-card%2F"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Twitter"
+                class="share-link"
+                >Share on Twitter</a
+            >
+        </div>
 
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
